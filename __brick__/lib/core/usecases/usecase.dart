@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:portfolio/src/core/error/failures.dart';
+import 'package:{{project_name}}/core/error/failures.dart';
 
 abstract class Usecase<Type, Params> {
-  Future<Either<Failures, Type>> call(Params params);
+  Future<Either<Failure, Type>> call(Params params);
 }
 
 class NoParams extends Equatable {
