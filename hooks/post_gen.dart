@@ -2,12 +2,13 @@ import 'dart:io';
 
 import 'package:mason/mason.dart';
 
-
 void run(HookContext context) async {
-
-  var progress = context.logger.progress('Installing... flutter version: '+{{flutter_version}});
-  await Process.run('fvm', ['install', {{flutter_version}}], runInShell: true);
-  await Process.run('fvm', ['use', {{flutter_version}}], runInShell: true);
+  context.logger.info('Create project {{project_name}}');
+  var progress = context.logger
+      .progress('Installing... flutter version: {{flutter_version}}');
+  await Process.run('fvm', ['install', '{{flutter_version}}'],
+      runInShell: true);
+  await Process.run('fvm', ['use', '{{flutter_version}}'], runInShell: true);
   progress.complete();
 
   progress = context.logger.progress('Executing... pubspec update');
@@ -52,6 +53,7 @@ void run(HookContext context) async {
 
   progress = context.logger.progress('Updating... files structure');
   await Process.run('rm', ['lib/main.dart'], runInShell: true);
-  await Process.run('rm', ['.idea/runConfigurations/main_dart.xml'], runInShell: true);
+  await Process.run('rm', ['.idea/runConfigurations/main_dart.xml'],
+      runInShell: true);
   progress.complete();
 }
