@@ -21,8 +21,13 @@ environment:
 #  * an optional prompt phrase used when asking for the variable
 #  * a list of values (enums only)
 vars:
-  name:
+  project_name:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: Project name
+    default: example
+    prompt: What's your project name (camelCase)?
+  flutter_version:
+    type: string
+    description: Flutter version
+    default: stable
+    prompt: Which flutter version you want for this project?
