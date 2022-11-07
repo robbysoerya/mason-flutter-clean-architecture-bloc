@@ -5,7 +5,7 @@ import 'package:mason/mason.dart';
 
 void run(HookContext context) async {
 
-  var progress = context.logger.progress('Installing... flutter version: {{flutter_version}}');
+  var progress = context.logger.progress('Installing... flutter version: '+{{flutter_version}});
   await Process.run('fvm', ['install', {{flutter_version}}], runInShell: true);
   await Process.run('fvm', ['use', {{flutter_version}}], runInShell: true);
   progress.complete();
