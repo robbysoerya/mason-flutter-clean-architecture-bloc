@@ -1,3 +1,4 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:{{project_name}}/core/core.dart';
 import 'package:{{project_name}}/features/guess_nationality/guess_nationality.dart';
 import 'package:flutter/material.dart';
