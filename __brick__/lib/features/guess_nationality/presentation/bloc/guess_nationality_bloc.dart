@@ -24,6 +24,7 @@ class GuessNationalityBloc extends Bloc<GuessNationalityEvent, AppStates> {
     GuessNationalityStarted event,
     Emitter<AppStates> emit,
   ) async {
+    emit(const AppStates.loading());
     final resp = await usecase.execute(event.name);
     final updatedState = resp.fold(
       (failure) => AppStates.error(failure),

@@ -4,8 +4,9 @@ import 'package:get_it/get_it.dart';
 final di = GetIt.instance;
 
 Future<void> init() async {
-  configureBlocInjector();
-  configureDataSourceInjector();
-  configureRepositoriesInjector();
-  configureUsecasesInjector();
+  await configureBlocInjector();
+  await configureDataSourceInjector();
+  await configureRepositoriesInjector();
+  await configureUsecasesInjector();
+  await configureServiceInjector();
 }

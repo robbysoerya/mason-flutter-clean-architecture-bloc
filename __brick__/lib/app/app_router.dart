@@ -8,7 +8,7 @@ final _key = GlobalKey<NavigatorState>(debugLabel: 'routerKey');
 final router = GoRouter(
   navigatorKey: _key,
   debugLogDiagnostics: true,
-  initialLocation: RouterConstant.loginPage,
+  initialLocation: RouterConstant.guessNationalityPage,
   observers: [RouterObserver()],
   routes: routes,
 );
@@ -18,7 +18,10 @@ List<GoRoute> get routes {
     GoRoute(
       name: 'home',
       path: RouterConstant.guessNationalityPage,
-      builder: (context, state) => const GuessNationalityPage(),
+       builder: (context, state) => BlocProvider(
+        create: (context) => di<GuessNationalityBloc>(),
+        child: const GuessNationalityPage(),
+      ),
     ),
   ];
 }
