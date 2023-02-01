@@ -1,4 +1,4 @@
-# {{project_name}}
+# Flutter Clean Architecture with BLoC
 
 A new Flutter project.
 

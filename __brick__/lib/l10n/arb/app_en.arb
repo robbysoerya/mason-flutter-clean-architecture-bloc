@@ -1,0 +1,18 @@
+{
+    "@@locale": "en",
+    "testTitle": "Hello",
+    "@testTitle": {
+        "description": "Text show in blablabla"
+    },
+    "guessNationalityAppBarTitle": "Guess Nationality",
+    "@guessNationalityAppBarTitle": {
+        "description": "App bar title for Guess Nationality Page"
+    },
+    "guessNationalityButtonTitle": "Guess",
+    "guessNationalityHintTextField": "Enter your name",
+    "loginTitle": "Login",
+    "logoutTitle": "Logout",
+    "resetButtonTitle": "Reset",
+    "loginUsernameHint": "Enter username",
+    "loginPasswordHint": "Enter password"
+}

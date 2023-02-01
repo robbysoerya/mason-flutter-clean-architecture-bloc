@@ -4,10 +4,9 @@ import 'package:mason/mason.dart';
 
 void run(HookContext context) async {
   String flutterVersion = context.vars['flutter_version'];
-  var progress = context.logger
-      .progress('Installing... flutter version: $flutterVersion');
-  await Process.run('fvm', ['install', '$flutterVersion'],
-      runInShell: true);
+  var progress =
+      context.logger.progress('Installing... flutter version: $flutterVersion');
+  await Process.run('fvm', ['install', '$flutterVersion'], runInShell: true);
   await Process.run('fvm', ['use', '$flutterVersion'], runInShell: true);
   progress.complete();
 
@@ -18,13 +17,17 @@ void run(HookContext context) async {
         'flutter',
         'pub',
         'add',
-        'dartz',
-        'equatable',
-        'flutter_bloc',
-        'get_it',
-        'json_annotation',
-        'shared_preferences',
-        'dio',
+        'dartz: ^0.10.1',
+        'dio: ^4.0.6',
+        'equatable: ^2.0.5',
+        'flutter_bloc: ^8.1.1',
+        'freezed: ^2.3.2',
+        'freezed_annotation: ^2.2.0',
+        'get_it: ^7.2.0',
+        'go_router: ^6.0.2',
+        'hive_flutter: ^1.1.0',
+        'internet_connection_checker: ^1.0.0+1',
+        'intl: ^0.17.0',
       ],
       runInShell: true);
   await Process.run(
@@ -34,11 +37,11 @@ void run(HookContext context) async {
         'pub',
         'add',
         '--dev',
-        'build_runner',
-        'dart_code_metrics',
-        'flutter_gen_runner',
-        'flutter_lints',
-        'json_serializable',
+        'build_runner: ^2.3.3',
+        'dart_code_metrics: ^5.5.1',
+        'flutter_gen_runner: ^5.1.0+1',
+        'flutter_lints: ^2.0.1',
+        'json_serializable: ^6.6.0',
       ],
       runInShell: true);
   progress.complete();
