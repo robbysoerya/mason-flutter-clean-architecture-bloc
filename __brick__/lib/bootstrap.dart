@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:{{project_name}}/injector/injector.dart';
 
 class AppProviderOberserver implements BlocObserver {
   @override
@@ -42,6 +43,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
+  await init();
   await Hive.initFlutter();
   await Hive.openBox('config');
   WidgetsFlutterBinding.ensureInitialized();
