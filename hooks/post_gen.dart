@@ -55,8 +55,6 @@ void run(HookContext context) async {
   progress.complete();
 
   progress = context.logger.progress('Updating... files structure');
-  await Process.run('rm', ['lib/main.dart'], runInShell: true);
-  await Process.run('rm', ['.idea/runConfigurations/main_dart.xml'],
-      runInShell: true);
+  await Process.run('dart', ['format', '.'], runInShell: true);
   progress.complete();
 }
