@@ -4,7 +4,7 @@ part 'request_guess_nationality_model.freezed.dart';
 
 @freezed
 class RequestGuessNationalityModel with _$RequestGuessNationalityModel {
-  const factory RequestUserModel({
+  const factory RequestGuessNationalityModel({
     required String name,
   }) = _RequestGuessNationalityModel;
 }

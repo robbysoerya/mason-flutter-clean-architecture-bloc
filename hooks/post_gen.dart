@@ -55,7 +55,9 @@ void run(HookContext context) async {
   progress.complete();
 
   progress = context.logger.progress('Generate model');
-  await Process.run('fvm', ['flutter', 'pub', 'run', 'build_runner', 'build'], runInShell: true);
+  await Process.run(
+      'fvm', ['flutter', 'pub', 'run', 'build_runner', 'build', '-d'],
+      runInShell: true);
   progress.complete();
 
   progress = context.logger.progress('Updating... files structure');
