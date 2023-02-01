@@ -54,6 +54,10 @@ void run(HookContext context) async {
   await Process.run('mason', ['remove', 'hello'], runInShell: true);
   progress.complete();
 
+  progress = context.logger.progress('Generate model');
+  await Process.run('fvm', ['flutter', 'pub', 'run', 'build_runner', 'build'], runInShell: true);
+  progress.complete();
+
   progress = context.logger.progress('Updating... files structure');
   await Process.run('dart', ['format', '.'], runInShell: true);
   progress.complete();
