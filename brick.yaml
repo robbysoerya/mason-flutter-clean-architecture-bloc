@@ -4,7 +4,7 @@ description: A new brick created with the Mason CLI.
 # The following defines the version and build number for your brick.
 # A version number is three numbers separated by dots, like 1.2.34
 # followed by an optional build number (separated by a +).
-version: 0.2.2+9
+version: 0.3.0+10
 
 # The following defines the environment for the current brick.
 # It includes the version of mason that the brick requires.
@@ -17,6 +17,11 @@ vars:
     description: Project name
     default: example
     prompt: What's your project name (camelCase)?
+  app_name:
+    type: string
+    description: App name
+    default: Example
+    prompt: What's your app name (title case)?
   package_name:
     type: string
     description: Package name
