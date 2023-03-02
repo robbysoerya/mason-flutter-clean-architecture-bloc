@@ -17,6 +17,11 @@ vars:
     description: Project name
     default: example
     prompt: What's your project name (camelCase)?
+  package_name:
+    type: string
+    description: Package name
+    default: com.example.app
+    prompt: What's your package name (snake_case)?
   flutter_version:
     type: string
     description: Flutter version

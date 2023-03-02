@@ -17,17 +17,17 @@ void run(HookContext context) async {
         'flutter',
         'pub',
         'add',
-        'dartz: ^0.10.1',
-        'dio: ^4.0.6',
-        'equatable: ^2.0.5',
-        'flutter_bloc: ^8.1.1',
-        'freezed: ^2.3.2',
-        'freezed_annotation: ^2.2.0',
-        'get_it: ^7.2.0',
-        'go_router: ^6.0.2',
-        'hive_flutter: ^1.1.0',
-        'internet_connection_checker: ^1.0.0+1',
-        'intl: ^0.17.0',
+        'dartz',
+        'dio',
+        'equatable',
+        'flutter_bloc',
+        'freezed',
+        'freezed_annotation',
+        'get_it',
+        'go_router',
+        'hive_flutter',
+        'internet_connection_checker',
+        'intl',
       ],
       runInShell: true);
   await Process.run(
@@ -37,11 +37,10 @@ void run(HookContext context) async {
         'pub',
         'add',
         '--dev',
-        'build_runner: ^2.3.3',
-        'dart_code_metrics: ^5.5.1',
-        'flutter_gen_runner: ^5.1.0+1',
-        'flutter_lints: ^2.0.1',
-        'json_serializable: ^6.6.0',
+        'build_runner',
+        'dart_code_metrics',
+        'flutter_lints',
+        'json_serializable',
       ],
       runInShell: true);
   progress.complete();
@@ -54,7 +53,7 @@ void run(HookContext context) async {
   await Process.run('mason', ['remove', 'hello'], runInShell: true);
   progress.complete();
 
-  progress = context.logger.progress('Generate model');
+  progress = context.logger.progress('Generate model...');
   await Process.run(
       'fvm', ['flutter', 'pub', 'run', 'build_runner', 'build', '-d'],
       runInShell: true);
