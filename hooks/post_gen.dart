@@ -38,7 +38,7 @@ void run(HookContext context) async {
         'pub',
         'add',
         '--dev',
-        'analyzer: ^5.4.0'
+        'analyzer: ^5.4.0',
         'build_runner',
         'dart_code_metrics',
         'flutter_lints',
