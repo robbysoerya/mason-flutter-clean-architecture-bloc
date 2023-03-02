@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 
 class ApiService with DioMixin implements Dio {
   bool _validateStatus(int? status) {
@@ -23,7 +23,7 @@ class ApiService with DioMixin implements Dio {
       );
 
   @override
-  HttpClientAdapter get httpClientAdapter => DefaultHttpClientAdapter();
+  HttpClientAdapter get httpClientAdapter => IOHttpClientAdapter();
 
   @override
   Interceptors get interceptors => Interceptors()

@@ -28,6 +28,7 @@ void run(HookContext context) async {
         'hive_flutter',
         'internet_connection_checker',
         'intl',
+        'json_annotation'
       ],
       runInShell: true);
   await Process.run(
@@ -37,6 +38,7 @@ void run(HookContext context) async {
         'pub',
         'add',
         '--dev',
+        'analyzer: ^5.4.0'
         'build_runner',
         'dart_code_metrics',
         'flutter_lints',
