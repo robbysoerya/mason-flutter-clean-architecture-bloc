@@ -6,6 +6,7 @@ abstract class GuessNationalityEvent extends Equatable {
 }
 
 class GuessNationalityReset extends GuessNationalityEvent {}
+
 class GuessNationalityStarted extends GuessNationalityEvent {
   GuessNationalityStarted({required this.name});
   final String name;

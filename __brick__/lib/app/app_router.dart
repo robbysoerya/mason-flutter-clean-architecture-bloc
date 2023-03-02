@@ -20,7 +20,7 @@ List<GoRoute> get routes {
     GoRoute(
       name: 'home',
       path: RouterConstant.guessNationalityPage,
-       builder: (context, state) => BlocProvider(
+      builder: (context, state) => BlocProvider(
         create: (context) => di<GuessNationalityBloc>(),
         child: const GuessNationalityPage(),
       ),
