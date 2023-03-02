@@ -10,6 +10,9 @@ void run(HookContext context) async {
   await Process.run('fvm', ['use', '$flutterVersion'], runInShell: true);
   progress.complete();
 
+  progress = context.logger.progress('Cleaning workspace...');
+  await Process.run('fvm', ['flutter', 'clean']);
+
   progress = context.logger.progress('Executing... pubspec update');
   await Process.run(
       'fvm',
@@ -59,6 +62,10 @@ void run(HookContext context) async {
   await Process.run(
       'fvm', ['flutter', 'pub', 'run', 'build_runner', 'build', '-d'],
       runInShell: true);
+  progress.complete();
+
+  progress = context.logger.progress('Generate l10n...');
+  await Process.run('fvm', ['flutter', 'gen-l10n'], runInShell: true);
   progress.complete();
 
   progress = context.logger.progress('Updating... files structure');
