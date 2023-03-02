@@ -11,7 +11,7 @@ void run(HookContext context) async {
   progress.complete();
 
   progress = context.logger.progress('Cleaning workspace...');
-  await Process.run('fvm', ['flutter', 'clean']);
+  await Process.run('fvm', ['flutter', 'clean'], runInShell: true);
   progress.complete();
 
   progress = context.logger.progress('Executing... pubspec update');
